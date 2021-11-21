@@ -1,2 +1,2 @@
-# greenhouse_manag_system
-greenhouse microclimate management system
+# trade_coin_bot
+trade coin bot coin management system
