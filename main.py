@@ -11,9 +11,6 @@ from cryptography.fernet import Fernet
 
 import matplotlib.pyplot as plt
 
-
-
-print(Key)
 def insertinf_conf (chat_id = 1, coin1 = "btc", total_trade_ask = 1, total_trade_bid = 1):
     print(f"""INSERT INTO inf_coin (chatID, namecoin, sell, buy) VALUES
             (PGP_SYM_ENCRYPT('{str(chat_id)}', '{Key}')::text, PGP_SYM_ENCRYPT('{coin1}', '{Key}')::text, PGP_SYM_ENCRYPT('{str(round(total_trade_ask, 2))}', '{Key}')::text, PGP_SYM_ENCRYPT('{str(round(total_trade_bid, 2))}', '{Key}')::text);""")
@@ -68,9 +65,6 @@ def selecXinf_conf ():
             x_list.append(x)
     return x_list
     
-    
-
-
 try:
     # connect to exist database
     connection = psycopg2.connect(
@@ -235,9 +229,5 @@ def get_trades(coin1="btc", coin2="usd", limit=150, chat_id='873804475'):
 def main():
     telegram_bot(token)
     connection.close()
-
-
-
-
 if __name__ == '__main__':
     main()
